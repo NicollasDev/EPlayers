@@ -12,7 +12,7 @@ namespace EPlayers.Models
         public string Texto { get; set; }
         public string Imagem { get; set; }
  
-       private const string PATH = "Database/equipe.csv";
+       private const string PATH = "Database/Noticias.csv";
         public Noticias()
         {
             CreateFolderAndFile(PATH);
@@ -53,7 +53,7 @@ namespace EPlayers.Models
             return noticias;
         }
 
-        public void Update(Noticias e)
+        public void Update(Noticias n)
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
             linhas.RemoveAll(y => y.Split(";")[0] == IdNoticia.ToString());

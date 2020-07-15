@@ -36,3 +36,4 @@ C:\Users\NdL\Desktop\EPlayers\obj\Debug\netcoreapp3.1\EPlayers.pdb
 C:\Users\NdL\Desktop\EPlayers\obj\Debug\netcoreapp3.1\EPlayers.genruntimeconfig.cache
 C:\Users\NdL\Desktop\EPlayers\obj\Debug\netcoreapp3.1\EPlayers.csproj.CopyComplete
 C:\Users\NdL\Desktop\EPlayers\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
+C:\Users\NdL\Desktop\EPlayers\obj\Debug\netcoreapp3.1\Razor\Views\Noticias\index.cshtml.g.cs

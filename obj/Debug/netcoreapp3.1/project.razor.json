@@ -20551,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\NdL\\Desktop\\EPlayers\\Views\\Noticias\\index.cshtml",
+      "TargetPath": "Views\\Noticias\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\NdL\\Desktop\\EPlayers\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
