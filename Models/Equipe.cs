@@ -54,8 +54,8 @@ namespace EPlayers.Models
         public void Update(Equipe e)
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(y => y.Split(";")[0] == IdEquipe.ToString());
-
+            linhas.RemoveAll(y => y.Split(";")[0] == e.IdEquipe.ToString());
+            linhas.Add(PrepararLinha(e));
             RewriteCSV(PATH, linhas);
         }
 
