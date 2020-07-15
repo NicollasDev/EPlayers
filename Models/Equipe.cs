@@ -24,7 +24,7 @@ namespace EPlayers.Models
         }
         private string PrepararLinha(Equipe e)
         {
-            return $"{e.IdEquipe}{e.Nome};{e.Imagem}";
+            return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
         public void Delete(int IdEquipe)
         {
