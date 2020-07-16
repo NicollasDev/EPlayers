@@ -25,7 +25,7 @@ namespace EPlayers.Models
         }
         private string PrepararLinha(Noticias n)
         {
-            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Texto}";
+            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
         }
          public void Delete(int IdNoticia)
         {
