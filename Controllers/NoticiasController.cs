@@ -26,10 +26,10 @@ namespace EPlayers.Controllers
         }
 
         /// <summary>
-        ///  Cadastra uma nova equipe
+        ///  Cadastra Notícias
         /// </summary>
-        /// <param name="form">Dados do formulario</param>
-        /// <returns>Redireciona para a mesma página </returns>
+        /// <param name="form">Dados da notícias</param>
+        /// <returns>Redireciona para Notícias </returns>
         public IActionResult Cadastrar(IFormCollection form)
         {
             Noticias noticias = new Noticias();
@@ -42,11 +42,13 @@ namespace EPlayers.Controllers
              var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
 
             //pastaA , pastaB , pastaC , arquivo.pdf
-
+             
+           
             if(file != null)
             {
-                if(!Directory.Exists(folder)){
-                    Directory.CreateDirectory(folder);
+               
+                if(!Directory.Exists(folder)){ //  Se não existir, Cria uma pasta para imagens 
+                    Directory.CreateDirectory(folder); //Cria uma pasta para imagens 
                 }
 
                 //wwwroot/img/Equipe/arquivo.pdf

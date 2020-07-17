@@ -38,6 +38,11 @@ ul{
     list-style-type: none;
 }
 
+td{
+    width: 30px;
+}
+
+
 .cabecalho{
     display: flex;
     justify-content: space-around;
@@ -89,7 +94,13 @@ ul{
     margin: 20px 0;
     padding: 100px 0;
     color: white;
+    
 }
+.sobre p{
+ margin-right: 30px;
+ font-size: 21px;
+}
+
 .sobre .container{
     display: flex;
     justify-content: flex-start;
@@ -271,7 +282,7 @@ footer p{
     align-items: center;
     text-transform: uppercase;
     box-shadow: 0px 2px 6px #000000, 0px -6px 15px rgba(114, 119, 195, 1);
-    padding: 1.5em;
+    padding: 3em;
     margin-bottom: 3em;
 }
 .campo{
@@ -293,7 +304,7 @@ select{
     background-color: #1e1c21;
     color: #ccc;
     border-bottom: 1px solid #474747;
-    width: 60%;
+    width: 63%;
     padding: 0.5em;
 }
 input:focus, select:focus{

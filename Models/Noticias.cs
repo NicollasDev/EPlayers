@@ -12,10 +12,10 @@ namespace EPlayers.Models
         public string Texto { get; set; }
         public string Imagem { get; set; }
  
-       private const string PATH = "Database/Noticias.csv";
+       private const string PATH = "Database/Noticias.csv"; //Nome do arquivo csv
         public Noticias()
         {
-            CreateFolderAndFile(PATH);
+            CreateFolderAndFile(PATH); //Cria o caminho a ser seguido
         }
 
         public void Create(Noticias n)
@@ -25,12 +25,17 @@ namespace EPlayers.Models
         }
         private string PrepararLinha(Noticias n)
         {
-            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
+            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}"; //modo como a linha será posicionado
         }
+         
+         /// <summary>
+         /// Exclui Arquivos indesejados
+         /// </summary>
+         /// <param name="IdNoticia">Id que for selecionado para excluir será removido</param>
          public void Delete(int IdNoticia)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(y => y.Split(";")[0] == IdNoticia.ToString());
+            linhas.RemoveAll(y => y.Split(";")[0] == IdNoticia.ToString()); //split para seperar os argumentos através de ;
 
             RewriteCSV(PATH, linhas);
         }
@@ -39,11 +44,11 @@ namespace EPlayers.Models
       
             List<Noticias> noticias = new List<Noticias>();
             string[] linhas = File.ReadAllLines(PATH);
-            foreach (var item in linhas)
+            foreach (var item in linhas) //jeito mais fácil de usar array 
             {
                 string[] linha = item.Split(";");
                 Noticias not = new Noticias();
-                not.IdNoticia = Int32.Parse(linha[0]);
+                not.IdNoticia = Int32.Parse(linha[0]); //ordem de como será escrito
                 not.Titulo = linha[1];
                 not.Texto = linha[2];
                 not.Imagem = linha[3];
@@ -53,7 +58,7 @@ namespace EPlayers.Models
             return noticias;
         }
 
-        public void Update(Noticias n)
+        public void Update(Noticias n) //forma de alterar algo indesejado
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
             linhas.RemoveAll(y => y.Split(";")[0] == IdNoticia.ToString());

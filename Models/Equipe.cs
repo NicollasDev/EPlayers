@@ -11,7 +11,7 @@ namespace EPlayers.Models
         public string Nome { get; set; }
         public string Imagem { get; set; }
 
-        private const string PATH = "Database/equipe.csv";
+        private const string PATH = "Database/equipe.csv"; //Nome do arquivo csv
         public Equipe()
         {
             CreateFolderAndFile(PATH);

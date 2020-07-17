@@ -5,16 +5,20 @@ namespace EPlayers
 {
     public class EPlayersbase
     {
+        /// <summary>
+        /// Cria um arquivo csv
+        /// </summary>
+        /// <param name="_path">Arquivo csv,Significado path = caminho</param>
         public void CreateFolderAndFile(string _path){
 
             string folder   = _path.Split("/")[0];
            
 
-            if(!Directory.Exists(folder)){
-                Directory.CreateDirectory(folder);
+            if(!Directory.Exists(folder)){ //se não existir uma pasta, cria uma.
+                Directory.CreateDirectory(folder); //cria uma pasta
             }
 
-            if(!File.Exists(_path)){
+            if(!File.Exists(_path)){ 
                 File.Create(_path).Close();
             }
         }

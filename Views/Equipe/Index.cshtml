@@ -2,53 +2,53 @@
 @{
     ViewData["Title"] = "Equipes";
 }
-        <div class="titulo_pagina">
-            <h1>cadastro de @ViewData["Title"]</h1>
-        </div>
+            <div class="titulo_pagina">
+                <h1>cadastro de @ViewData["Title"]</h1>
+                </div>
 
-<form class="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data" >
+    <form class="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data" >
 
-  <div class="campo">
-   <label for="IdEquipe">IdEquipe</label> 
-   <input type="text" name="IdEquipe" id="IdEquipe"> 
-  </div>
-   
-    <div class="campo">
-   <label for="Nome">Nome</label> 
-   <input type="text" name="Nome" id="Nome"> 
-   </div>
-
-   <div class="campo">
-   <label for="Imagem">Imagem</label> 
-   <input type="file" name="Imagem" id="Imagem"> 
-   </div>
-
-    <button class="gradient btn" type="submit">Cadastrar</button>
+    <div class="campo"> @* separamento de colunas *@
+    <label for="IdEquipe">IdEquipe</label> 
+    <input class="gradient btn" type="text" name="IdEquipe" id="IdEquipe"> 
+    </div>
     
-</form>
+        <div class="campo"> @* separamento de colunas *@
+    <label for="Nome">Nome</label> 
+    <input class="gradient btn" type="text" name="Nome" id="Nome"> 
+    </div>
 
-<table>
-    <thead>
-        <th>Id</th>
-        <th>Nome</th>
-        <th>Imagem</th>
-        <th>Ações</th>
-    </thead>
-    <tbody>
-        @foreach (var item in ViewBag.Equipes)
-        {
-            <tr>
-                <td>@item.IdEquipe</td>
-                <td>@item.Nome</td>
+     <div class="campo"> @* separamento de colunas *@
+    <label for="Imagem">Imagem</label> 
+    <input type="file" name="Imagem" id="Imagem"> 
+    </div>
+
+         <button class="gradient btn" type="submit">Cadastrar</button> @* Botão de cadastrar atribuido com gradient *@
+        
+    </form>
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Imagem</th>
+            <th>Ações</th>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Equipes)
+            {
+                <tr>
+                    <td>@item.IdEquipe</td>
+                    <td>@item.Nome</td>
+                    <td>
+                        <img src="img/Equipes/@item.Imagem" alt="Imagem da equipe @item.Nome" /> @*  Puxar imagens da pasta, pelo seu nome *@
+                    </td>
                 <td>
-                    <img src="img/Equipes/@item.Imagem" alt="Imagem da equipe @item.Nome" />
+                    <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@item.IdEquipe"> @* ação de excluir *@
+                    @* icone lixo *@ <i class="fa fa-trash"></i> 
+                    </a>
                 </td>
-            <td>
-                <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@item.IdEquipe">
-                    <i class="fa fa-trash"></i>
-                </a>
-            </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                </tr>
+            }
+        </tbody>
+    </table>
